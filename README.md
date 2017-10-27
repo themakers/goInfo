@@ -1,70 +1,37 @@
-# Introduction:
-  GoInfo is get os platform information coding by Golang.
-  
-  It can help you to know os information.
-  
-  
-## Version:
+# Introduction
 
-version:0.0.1
+Package provides single function to obtain OS-specific information (see OSInfo struct) on major systems and 'os-release' information on
+Linux (i.e. distro name/version)
 
 ## Futures
 
-get linux information
+* Obtain Windows, Linux, macOS, FreeBSD OS/Kernel information
+* Support for os-release on Linux systems
 
-get windows information
+## Install
 
-get osx information
-
-get freebsd information
-  
-  
-## Install:
 ```sh
-  go get github.com/matishsiao/goInfo
-  go build
+go get github.com/themakers/osinfo
 ```
 
-## Struct:
-```sh
-  type GoInfoObject struct {
-	GoOS string
-	Kernel string
-	Core string
-	Platform string
-	OS string
-	Hostname string
-	CPUs int
+## Example
+
+```go
+package main
+
+import (
+  "fmt"
+  "github.com/themakers/osinfo"
+)
+
+func main() {
+  osi := osinfo.GetInfo()
+  fmt.Println(osi.AsJSON())
 }
 ```
 
-## Example:
+## Copyright
 
-```sh   
-   package main
+2012-2014 Matis Hsiao
 
-   import (
-	   "github.com/matishsiao/goInfo"
-   )
-
-   func main() {
-		gi := goInfo.GetInfo()
-		gi.VarDump()
-	 }
-}
-```
-
-It's will show:
-
-```sh
-   GoOS: linux
-   Kernel: Linux
-   Core: 3.13.0-27-generic
-   Platform: x86_64
-   OS: GNU/Linux
-   Hostname: ubuntu
-   CPUs: 1
-```
-
-##License and Copyright
-This software is Copyright 2012-2014 Matis Hsiao.
+2017 The Architect
