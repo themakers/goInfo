@@ -27,6 +27,22 @@ type OSInfo struct {
 	LinuxRelease *LinuxOSRelease
 }
 
+func (gi *OSInfo) IsDarwin() bool {
+	return false
+}
+
+func (gi *OSInfo) IsWindows() bool {
+	return false
+}
+
+func (gi *OSInfo) IsLinux() bool {
+	return false
+}
+
+func (gi *OSInfo) IsFreeBSD() bool {
+	return false
+}
+
 type LinuxOSRelease struct {
 	Name             string
 	Version          string
