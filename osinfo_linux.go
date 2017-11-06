@@ -19,7 +19,7 @@ func GetInfo() *OSInfo {
 	osStr := strings.Replace(out, "\n", "", -1)
 	osStr = strings.Replace(osStr, "\r\n", "", -1)
 	osInfo := strings.Split(osStr, " ")
-	gio := &OSInfo{Kernel: osInfo[0], Core: osInfo[1], Platform: osInfo[2], OS: osInfo[3], GoOS: runtime.GOOS, CPUs: runtime.NumCPU()}
+	gio := &OSInfo{Kernel: osInfo[0], Core: osInfo[1], Platform: osInfo[2], OS: osInfo[3], CPUs: runtime.NumCPU()}
 	gio.Hostname, _ = os.Hostname()
 
 	var err error

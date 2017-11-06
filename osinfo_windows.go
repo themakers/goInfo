@@ -38,7 +38,6 @@ func GetInfo() *OSInfo {
 		Core:     records[0][2],    // 10.0.15063 N/A Build 15063
 		Platform: records[0][13],   // x64-based PC
 		OS:       records[0][1],    // Microsoft Windows 10 Pro
-		GoOS:     runtime.GOOS,     // windows
 		CPUs:     runtime.NumCPU(), // 4
 	}
 

@@ -16,7 +16,6 @@ const (
 )
 
 type OSInfo struct {
-	GoOS     string
 	Kernel   string
 	Core     string
 	Platform string
