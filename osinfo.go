@@ -1,7 +1,6 @@
 package osinfo
 
 import (
-	"encoding/json"
 	"io/ioutil"
 	"regexp"
 	"strings"
@@ -27,18 +26,6 @@ type OSInfo struct {
 
 	LinuxRelease *LinuxOSRelease
 }
-
-func (gi *OSInfo) AsJSON() string {
-	if data, err := json.MarshalIndent(gi, "", " "); err != nil {
-		panic(err)
-	} else {
-		return string(data)
-	}
-}
-
-// func (gi *OSInfo) String() string {
-// 	return fmt.Sprintf("GoOS:%v,Kernel:%v,Core:%v,Platform:%v,OS:%v,Hostname:%v,CPUs:%v", gi.GoOS, gi.Kernel, gi.Core, gi.Platform, gi.OS, gi.Hostname, gi.CPUs)
-// }
 
 type LinuxOSRelease struct {
 	Name             string
