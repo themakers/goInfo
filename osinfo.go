@@ -7,6 +7,15 @@ import (
 	"strings"
 )
 
+type Platform string
+
+const (
+	PlatDarwin  Platform = "darwin"
+	PlatWindows Platform = "windows"
+	PlatLinux   Platform = "linux"
+	PlatFreeBSD Platform = "freebsd"
+)
+
 type OSInfo struct {
 	GoOS     string
 	Kernel   string
