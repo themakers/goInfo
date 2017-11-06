@@ -27,19 +27,19 @@ type OSInfo struct {
 }
 
 func (gi *OSInfo) IsDarwin() bool {
-	return false
+	panic("Not implemented")
 }
 
 func (gi *OSInfo) IsWindows() bool {
-	return false
+	panic("Not implemented")
 }
 
 func (gi *OSInfo) IsLinux() bool {
-	return false
+	panic("Not implemented")
 }
 
 func (gi *OSInfo) IsFreeBSD() bool {
-	return false
+	panic("Not implemented")
 }
 
 type LinuxOSRelease struct {
