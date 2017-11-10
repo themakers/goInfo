@@ -5,7 +5,6 @@ import (
 	"encoding/csv"
 	"os"
 	"os/exec"
-	"runtime"
 )
 
 func GetInfo() *OSInfo {
@@ -34,11 +33,10 @@ func GetInfo() *OSInfo {
 
 	// TODO: We should stop cheating with the lack of CSV header and instead parse the CSV into a real map or similar so we can be sure we have the right index always
 	gio := &OSInfo{
-		Kernel:   "windows",        // windowss
-		Core:     records[0][2],    // 10.0.15063 N/A Build 15063
-		Platform: records[0][13],   // x64-based PC
-		OS:       records[0][1],    // Microsoft Windows 10 Pro
-		CPUs:     runtime.NumCPU(), // 4
+		Kernel:   "windows",      // windowss
+		Core:     records[0][2],  // 10.0.15063 N/A Build 15063
+		Platform: records[0][13], // x64-based PC
+		OS:       records[0][1],  // Microsoft Windows 10 Pro
 	}
 
 	// Set the hostname
