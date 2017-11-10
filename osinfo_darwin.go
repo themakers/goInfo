@@ -3,7 +3,6 @@ package osinfo
 import (
 	"bytes"
 	"fmt"
-	"os"
 	"os/exec"
 	"strings"
 	"time"
@@ -19,7 +18,6 @@ func GetInfo() *OSInfo {
 	osStr = strings.Replace(osStr, "\r\n", "", -1)
 	osInfo := strings.Split(osStr, " ")
 	gio := &OSInfo{Kernel: osInfo[0], Core: osInfo[1], Platform: osInfo[2], OS: osInfo[0]}
-	gio.Hostname, _ = os.Hostname()
 	return gio
 }
 

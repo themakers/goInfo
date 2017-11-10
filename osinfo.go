@@ -20,8 +20,6 @@ type OSInfo struct {
 	Core     string
 	Platform string
 	OS       string
-	Hostname string
-	CPUs     int
 
 	LinuxRelease *LinuxOSRelease
 }

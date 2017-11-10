@@ -3,7 +3,6 @@ package osinfo
 import (
 	"bytes"
 	"encoding/csv"
-	"os"
 	"os/exec"
 )
 
@@ -37,12 +36,6 @@ func GetInfo() *OSInfo {
 		Core:     records[0][2],  // 10.0.15063 N/A Build 15063
 		Platform: records[0][13], // x64-based PC
 		OS:       records[0][1],  // Microsoft Windows 10 Pro
-	}
-
-	// Set the hostname
-	gio.Hostname, err = os.Hostname()
-	if err != nil {
-		panic(err)
 	}
 
 	return gio
