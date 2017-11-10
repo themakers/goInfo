@@ -3,16 +3,8 @@ package osinfo
 import (
 	"io/ioutil"
 	"regexp"
+	"runtime"
 	"strings"
-)
-
-type Platform string
-
-const (
-	PlatDarwin  Platform = "darwin"
-	PlatWindows Platform = "windows"
-	PlatLinux   Platform = "linux"
-	PlatFreeBSD Platform = "freebsd"
 )
 
 type OSInfo struct {
@@ -25,19 +17,19 @@ type OSInfo struct {
 }
 
 func (gi *OSInfo) IsDarwin() bool {
-	panic("Not implemented")
+	return runtime.GOOS == "darwin"
 }
 
 func (gi *OSInfo) IsWindows() bool {
-	panic("Not implemented")
+	return runtime.GOOS == "windows"
 }
 
 func (gi *OSInfo) IsLinux() bool {
-	panic("Not implemented")
+	return runtime.GOOS == "linux"
 }
 
 func (gi *OSInfo) IsFreeBSD() bool {
-	panic("Not implemented")
+	return runtime.GOOS == "freebsd"
 }
 
 type LinuxOSRelease struct {
